@@ -37,4 +37,11 @@ public class TripService implements ITripService {
         List<TripRequest> tripRequestByTripStatus = tripRequestRepo.findTripRequestByTripStatus(tripStatus);
         return tripRequestByTripStatus;
     }
+
+    @Override
+    public List<TripRequest> findAll() {
+        return tripRequestRepo.findAll();
+    }
+
+
 }

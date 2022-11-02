@@ -9,4 +9,5 @@ import java.util.List;
 public interface ITripService {
     String saveTrip(TripRequest tripRequest, BindingResult bindingResult);
     List<TripRequest> findTripByStatus(TripStatus tripStatus, BindingResult bindingResult);
+    List<TripRequest> findAll();
 }
