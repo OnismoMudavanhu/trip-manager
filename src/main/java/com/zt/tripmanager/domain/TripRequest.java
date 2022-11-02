@@ -1,5 +1,6 @@
 package com.zt.tripmanager.domain;
 
+import com.zt.tripmanager.common.TripStatus;
 import lombok.*;
 
 import javax.persistence.*;
@@ -27,4 +28,8 @@ public class TripRequest {
 
     @Column(name="expected_end_date")
     private LocalDate expectedEndDate;
+
+    @Column(name = "trip_status")
+    @Enumerated(value=EnumType.STRING)
+    private TripStatus tripStatus;
 }

@@ -1,6 +1,7 @@
 package com.zt.tripmanager.controller;
 
 import com.zt.tripmanager.domain.User;
+import com.zt.tripmanager.domain.dto.LoginDTO;
 import com.zt.tripmanager.service.api.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,6 +43,15 @@ public class MainController {
     @GetMapping("/login")
     public String login(){
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(
+            @ModelAttribute("user") LoginDTO loginDTO,
+            BindingResult result,
+            Model model
+    ){
+        return iUserService.login(loginDTO, result);
     }
 
 }
