@@ -39,4 +39,9 @@ public class MainController {
         return iUserService.saveUser(user, result);
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
 }
